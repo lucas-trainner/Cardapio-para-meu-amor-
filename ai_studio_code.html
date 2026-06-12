@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Amour | Menu Especial Dia dos Namorados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --romantic-red: #800020; /* Bordô Elegante */
+            --dark: #0a0a0a;
+            --light: #fdfaf6;
+            --text-gray: #b5b5b5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,10,1)), 
+                        url('https://images.unsplash.com/photo-1516100882582-76c9a59b39cd?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            padding: 20px;
+        }
+
+        .valentine-badge {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--light);
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Menu Section */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .menu-item {
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .category {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .dish-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .description {
+            color: var(--text-gray);
+            max-width: 550px;
+            font-weight: 300;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        /* O PREÇO EM "AMOR" */
+        .price-romantic {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 10px 30px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .dish-img {
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            filter: sepia(20%) brightness(80%);
+            border-radius: 2px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #050505;
+            color: var(--text-gray);
+        }
+
+        .heart {
+            color: var(--romantic-red);
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 60px 20px; }
+            .dish-img { height: 220px; }
+        }
+
+        /* Botão Elegante */
+        .btn-scroll {
+            margin-top: 40px;
+            padding: 15px 35px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .btn-scroll:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="valentine-badge">Edição Especial</div>
+        <div class="logo">L'Amour</div>
+        <div class="subtitle">Onde cada sabor conta uma história de amor</div>
+        <a href="#menu" class="btn-scroll">Descobrir o Menu</a>
+    </header>
+
+    <div class="container" id="menu">
+        <div class="section-intro">
+            <h2 class="section-title">Menu Degustação</h2>
+            <p style="color: var(--text-gray); margin-top: 10px;">Para esta noite, não aceitamos cartões. Apenas sentimentos.</p>
+        </div>
+
+        <!-- Entrada -->
+        <div class="menu-item">
+            <span class="category">A Primeira Vista (Entrada)</span>
+            <img src="https://images.unsplash.com/photo-1572656631137-7935297eff55?auto=format&fit=crop&q=80&w=1000" alt="Bruschetta" class="dish-img">
+            <h3 class="dish-name">Bruschetta de Pomodoro Amore</h3>
+            <p class="description">Pão artesanal aquecido no fogo, tomates cereja doces, manjericão colhido à mão e o melhor azeite toscano.</p>
+            <div class="price-romantic">Um abraço demorado</div>
+        </div>
+
+        <!-- Prato Principal -->
+        <div class="menu-item">
+            <span class="category">O Coração da Noite (Principal)</span>
+            <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=1000" alt="Fettuccine" class="dish-img">
+            <h3 class="dish-name">Fettuccine ao Molho Madeira</h3>
+            <p class="description">Massa fresca sedosa, envolvida em uma redução de vinho madeira e especiarias, acompanhada de filet mignon em tiras.</p>
+            <div class="price-romantic">Um beijo apaixonado</div>
+        </div>
+
+        <!-- Sobremesa -->
+        <div class="menu-item">
+            <span class="category">Doce Finalização (Sobremesa)</span>
+            <img src="https://images.unsplash.com/photo-1575032617751-6ddec2089882?auto=format&fit=crop&q=80&w=1000" alt="Chocolate" class="dish-img">
+            <h3 class="dish-name">Pecado de Chocolate & Doces Finos</h3>
+            <p class="description">Uma seleção de trufas intensas e docinhos gourmet feitos para derreter na boca e celebrar a doçura de estarem juntos.</p>
+            <div class="price-romantic">Um "Eu Te Amo" sussurrado</div>
+        </div>
+
+        <!-- Bebida -->
+        <div class="menu-item">
+            <span class="category">Para Brindar (Bebida)</span>
+            <img src="https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&q=80&w=1000" alt="Vinho Rose" class="dish-img">
+            <h3 class="dish-name">Vinho Rosé de Provence</h3>
+            <p class="description">Leve, refrescante e de cor romântica. Notas de frutas vermelhas para brindar ao futuro do casal.</p>
+            <div class="price-romantic">Um olhar profundo</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="heart">♥</div>
+        <p>Criado para os apaixonados que sabem que as melhores coisas da vida não têm preço.</p>
+        <p style="margin-top: 20px; font-size: 0.7rem; letter-spacing: 2px;">FELIZ DIA DOS NAMORADOS</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
